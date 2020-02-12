@@ -8,7 +8,7 @@ public class CaesarChiffre {
         Scanner scanner = new Scanner(System.in);
         characterJump = scanner.nextInt();
         if (characterJump < 0) {
-            characterJump = (characterJump % 26) * (-1);
+            characterJump = (characterJump % 26) + 26;
         } else {
             characterJump = characterJump % 26;
         }
