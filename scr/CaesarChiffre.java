@@ -9,14 +9,15 @@ public class CaesarChiffre {
         char[] singleLetter = userInput.toCharArray();
         char[] changedLetter = new char[userInput.length()];
         for (int i = 0; i < userInput.length(); i++) {
-            changedLetter[i] = (char) (singleLetter[i] + characterJump);
-
+            if (i < (26 - characterJump)) {
+                changedLetter[i] = (char) (singleLetter[i] + characterJump);
+            } else {
+                changedLetter[i] = (char) (singleLetter[i] + characterJump);
+            }
         }
-
-        int x = 'a';
-        System.out.println(x);
-        System.out.println((char) 97);
-
+        for (int i = 0; i < userInput.length(); i++) {
+            System.out.print(changedLetter[i]);
+        }
 
     }
 }
