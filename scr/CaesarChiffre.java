@@ -27,6 +27,5 @@ public class CaesarChiffre {
         for (int i = 0; i < userInput.length(); i++) {
             System.out.print(changedLetter[i]);
         }
-
     }
 }
