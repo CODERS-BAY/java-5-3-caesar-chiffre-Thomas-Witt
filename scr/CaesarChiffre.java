@@ -21,7 +21,7 @@ public class CaesarChiffre {
         char[] characters = new char[message.length()];
 
         for (int i = 0; i < message.length(); i++) {
-            characters[i] = message.charAt(i);              // Copies the message into an Char-Array
+            characters[i] = message.charAt(i);             // Copies the message into an Char-Array
         }
         for (int i = 0; i < message.length(); i++) {
             if ((int) characters[i] != 32) {
