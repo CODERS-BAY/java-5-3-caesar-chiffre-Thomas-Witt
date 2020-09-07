@@ -13,25 +13,24 @@ public class CaesarChiffre {
         int charjump;
         if (choice == 2) {
             System.out.println("How many places should it jump?");
-             charjump = scanner.nextInt();
+            charjump = scanner.nextInt();
         } else {
             charjump = rand.nextInt(1000);
         }
         charjump = charjump % 26;
-        char[] characters = new char[message.length()];
-
+        char[] characters = message.toCharArray();
+        // for (int i = 0; i < message.length(); i++) {
+        //     characters[i] = message.charAt(i);             // The longer method to  copy the message into an Char-Array
+        // }
         for (int i = 0; i < message.length(); i++) {
-            characters[i] = message.charAt(i);             // Copies the message into an Char-Array
-        }
-        for (int i = 0; i < message.length(); i++) {
-            if ((int) characters[i] != 32) {
-                if ((int) characters[i] >= 97 && (int) characters[i] <= 122 && ((int) characters[i] + charjump) > 122) {
+            if ((int) characters[i] != ' ') {
+                if ((int) characters[i] >= 'a' && (int) characters[i] <= 'z' && ((int) characters[i] + charjump) > 'z') {
                     characters[i] = (char) (characters[i] + charjump - 26);
-                } else if ((int) characters[i] >= 97 && (int) characters[i] <= 122 && ((int) characters[i] + charjump) < 97) {
+                } else if ((int) characters[i] >= 'a' && (int) characters[i] <= 'z' && ((int) characters[i] + charjump) < 'a') {
                     characters[i] = (char) (characters[i] + charjump + 26);
-                } else if ((int) characters[i] >= 65 && (int) characters[i] <= 90 && ((int) characters[i] + charjump) > 90) {
+                } else if ((int) characters[i] >= 'A' && (int) characters[i] <= 'Z' && ((int) characters[i] + charjump) > 'Z') {
                     characters[i] = (char) (characters[i] + charjump - 26);
-                } else if ((int) characters[i] >= 65 && (int) characters[i] <= 90 && ((int) characters[i] + charjump) < 65) {
+                } else if ((int) characters[i] >= 'A' && (int) characters[i] <= 'Z' && ((int) characters[i] + charjump) < 'A') {
                     characters[i] = (char) (characters[i] + charjump + 26);
                 } else {
                     characters[i] = (char) (characters[i] + charjump);
